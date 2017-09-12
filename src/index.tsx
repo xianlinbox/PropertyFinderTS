@@ -1,40 +1,21 @@
-import React from 'react';
-import { StyleSheet, Text, TextStyle, View, ViewStyle } from 'react-native';
+import React, {Component} from 'react';
+import PropertyScenes from './property';
+import CarScenes from './car';
 
-interface Props {}
+import {
+  Scene,
+  Router
+} from 'react-native-router-flux';
 
-interface State {}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF'
-  } as ViewStyle,
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10
-  } as TextStyle,
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5
-  } as TextStyle
-});
-
-export default class PropertyFinderTS extends React.Component<Props, State> {
+export default class PropertyFinder extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native! *******
-        </Text>
-        <Text style={styles.instructions}>
-          {'To get started, edit src/index.tsx'}
-        </Text>
-      </View>
+      <Router>
+        <Scene key='home' tabs={true}>
+          {PropertyScenes()}
+          {CarScenes()}
+        </Scene>
+      </Router>
     );
   }
 }
