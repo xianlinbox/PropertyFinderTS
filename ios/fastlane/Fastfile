@@ -1,5 +1,4 @@
-# More documentation about how to customize your build
-# can be found here:
+# More documentation about how to customize your build can be found here:
 # https://docs.fastlane.tools
 fastlane_version "1.109.0"
 
@@ -13,16 +12,24 @@ default_platform :ios
 # Fastfile actions accept additional configuration, but
 # don't worry, fastlane will prompt you for required
 # info which you can add here later
+lane :register_devices_dev do
+    register_devices(
+        devices: {
+          "Panpan iphone 7" => "b0abac9398f507ba596e71688fd97ae8e772c1dd"
+        }
+      )
+  end
+
 lane :beta do
   # build your iOS app
   gym(
-    # scheme: "YourScheme",
+    scheme: "PropertyFinderTS",
     export_method: "ad-hoc"
   )
 
   # upload to HockeyApp
   hockey(
-    # api_token: "YOUR_API_TOKEN"
+    api_token: "6bc866308b9e4e348b01b7fcef98e11c"
   )
 
   # slack(

@@ -4,5 +4,6 @@
 # For more details, check out the documentation at:
 # https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md
 
-# app_identifier "com.your.app" # the bundle identifier of your app
-# apple_id "apple@fastlane.tools" # Your Apple ID
+app_identifier "com.xianlinbox.PropertyFinderTS" # the bundle identifier of your app
+apple_id "xnliu@thoughtworks.com" # Your Apple ID
+team_id "LL62P32G5C"
