@@ -1,0 +1,17 @@
+fastlane_version "1.109.0"
+
+default_platform :android
+
+lane :beta do
+  # build the release variant
+  gradle(task: "assembleRelease")
+
+  # upload to HockeyApp
+  hockey(
+    api_token: "eba66cb4ab9048659aeb3ffde16de1a2"
+  )
+
+  # slack(
+  #   slack_url: "https://hooks.slack.com/services/IDS"
+  # )
+end
