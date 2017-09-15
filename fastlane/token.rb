@@ -1,0 +1,2 @@
+ANDROID_TOKEN = 'eba66cb4ab9048659aeb3ffde16de1a2'
+IOS_TOKEN     = '6bc866308b9e4e348b01b7fcef98e11c'

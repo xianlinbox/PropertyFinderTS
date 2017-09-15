@@ -1,0 +1,45 @@
+fastlane_version "2.56.0"
+
+# Directories
+FASTLANE_DIR  = File.expand_path(File.dirname(File.dirname(__FILE__)))
+IOS_DIR = File.expand_path('../ios')
+BUILD_DIR     = File.expand_path('build')
+REPORTS_DIR   = File.expand_path('reports')
+
+# Build
+IOS_PROJECT             = 'ios/PropertyFinderTS.xcodeproj'
+SCHEME              = ENV["SCHEME"] || 'PropertyFinderTS'
+SIMULATOR_NAME      = ENV["SIMULATOR_NAME"] || "iPhone 6s"
+SIMULATOR_VERSION   = ENV["SIMULATOR_VERSION"] || "9.1"
+CONFIG              = ENV["CONFIG"] || "Debug"
+RELEASE_NOTE        = ENV["RELEASE_NOTE"] || "empty"
+
+#HockyAPP token
+ANDROID_TOKEN = 'eba66cb4ab9048659aeb3ffde16de1a2'
+IOS_TOKEN     = '6bc866308b9e4e348b01b7fcef98e11c'
+
+
+
+lane :android_beta do
+  # build the release variant
+  gradle(project_dir: ANDROID_DIR, task: "assembleRelease")
+
+  # upload to HockeyApp
+  hockey(
+    api_token: ANDROID_TOKEN
+  )
+end
+
+lane :ios_beta do
+  # build your iOS app
+  gym(
+    project: IOS_PROJECT,
+    scheme: SCHEME,
+    export_method: "ad-hoc"
+  )
+
+  # upload to HockeyApp
+  hockey(
+    api_token: IOS_TOKEN
+  )
+end

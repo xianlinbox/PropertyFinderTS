@@ -50,9 +50,10 @@ buck-out/
 /ios/fastlane/report.xml
 /ios/fastlane/Preview.html
 /ios/fastlane/screenshots
-/android/fastlane/report.xml
-/android/fastlane/Preview.html
-/android/fastlane/screenshots
+/fastlane/report.xml
+/fastlane/Preview.html
+/fastlane/screenshots
 /ios/PropertyFinderTS.ipa
 /ios/PropertyFinderTS.app.dSYM.zip
 
+/fastlane/token.rb

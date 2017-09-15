@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.001085">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: gym" time="112.867657">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: hockey" time="17.168175">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>

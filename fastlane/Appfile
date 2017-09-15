@@ -1,0 +1,3 @@
+app_identifier "com.xianlinbox.PropertyFinderTS" # the bundle identifier of your app
+apple_id "xnliu@thoughtworks.com" # Your Apple ID
+team_id "LL62P32G5C"
