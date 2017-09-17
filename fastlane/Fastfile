@@ -19,27 +19,30 @@ ANDROID_TOKEN = 'eba66cb4ab9048659aeb3ffde16de1a2'
 IOS_TOKEN     = '6bc866308b9e4e348b01b7fcef98e11c'
 
 
+platform :android do
+  lane :android_beta do
+    # build the release variant
+    gradle(project_dir: ANDROID_DIR, task: "assembleRelease")
 
-lane :android_beta do
-  # build the release variant
-  gradle(project_dir: ANDROID_DIR, task: "assembleRelease")
-
-  # upload to HockeyApp
-  hockey(
-    api_token: ANDROID_TOKEN
-  )
+    # upload to HockeyApp
+    hockey(
+      api_token: ANDROID_TOKEN
+    )
+  end
 end
 
-lane :ios_beta do
-  # build your iOS app
-  gym(
-    project: IOS_PROJECT,
-    scheme: SCHEME,
-    export_method: "ad-hoc"
-  )
+platform :ios do
+  lane :ios_beta do
+    # build your iOS app
+    gym(
+      project: IOS_PROJECT,
+      scheme: SCHEME,
+      export_method: "ad-hoc"
+    )
 
-  # upload to HockeyApp
-  hockey(
-    api_token: IOS_TOKEN
-  )
+    # upload to HockeyApp
+    hockey(
+      api_token: IOS_TOKEN
+    )
+  end
 end
