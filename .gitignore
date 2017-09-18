@@ -50,6 +50,6 @@ buck-out/
 /fastlane/report.xml
 /fastlane/Preview.html
 /fastlane/screenshots
-/ios/PropertyFinderTS.ipa
-/ios/PropertyFinderTS.app.dSYM.zip
+/PropertyFinderTS.ipa
+/PropertyFinderTS.app.dSYM.zip
 /fastlane/.env.default

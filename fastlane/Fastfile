@@ -46,3 +46,10 @@ platform :ios do
     )
   end
 end
+
+after_all do |lane, options|
+    # Directories
+    FASTLANE_DIR  = File.expand_path(File.dirname(File.dirname(__FILE__)))
+    IOS_DIR = File.expand_path('../ios')
+    ANDROID_DIR = File.expand_path('../android')
+end
