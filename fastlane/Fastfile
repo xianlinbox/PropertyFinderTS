@@ -1,38 +1,38 @@
 fastlane_version "2.56.0"
 
-# Directories
-FASTLANE_DIR  = File.expand_path(File.dirname(File.dirname(__FILE__)))
-IOS_DIR = File.expand_path('../ios')
-BUILD_DIR     = File.expand_path('build')
-REPORTS_DIR   = File.expand_path('reports')
 
-# Build
-IOS_PROJECT             = 'ios/PropertyFinderTS.xcodeproj'
-SCHEME              = ENV["SCHEME"] || 'PropertyFinderTS'
-SIMULATOR_NAME      = ENV["SIMULATOR_NAME"] || "iPhone 6s"
-SIMULATOR_VERSION   = ENV["SIMULATOR_VERSION"] || "9.1"
-CONFIG              = ENV["CONFIG"] || "Debug"
-RELEASE_NOTE        = ENV["RELEASE_NOTE"] || "empty"
+before_all do |lane, options|
+    # Directories
+    FASTLANE_DIR  = File.expand_path(File.dirname(File.dirname(__FILE__)))
+    IOS_DIR = File.expand_path('../ios')
+    ANDROID_DIR = File.expand_path('../android')
 
-#HockyAPP token
-ANDROID_TOKEN = 'eba66cb4ab9048659aeb3ffde16de1a2'
-IOS_TOKEN     = '6bc866308b9e4e348b01b7fcef98e11c'
+    # Build
+    IOS_PROJECT         = 'ios/PropertyFinderTS.xcodeproj'
+    SCHEME              = ENV["SCHEME"] || 'PropertyFinderTS'
+    SIMULATOR_NAME      = ENV["SIMULATOR_NAME"] || "iPhone 6s"
+    SIMULATOR_VERSION   = ENV["SIMULATOR_VERSION"] || "9.1"
+    CONFIG              = ENV["CONFIG"] || "Debug"
 
+    #HockeyApp Token
+    HOCKEY_ANDROID_TOKEN = ENV['HOCKEY_ANDROID_TOKEN']
+    HOCKEY_IOS_TOKEN     = ENV['HOCKEY_IOS_TOKEN']
+end
 
 platform :android do
-  lane :android_beta do
+  lane :beta do
     # build the release variant
     gradle(project_dir: ANDROID_DIR, task: "assembleRelease")
 
     # upload to HockeyApp
     hockey(
-      api_token: ANDROID_TOKEN
+      api_token: HOCKEY_ANDROID_TOKEN
     )
   end
 end
 
 platform :ios do
-  lane :ios_beta do
+  lane :beta do
     # build your iOS app
     gym(
       project: IOS_PROJECT,
@@ -42,7 +42,7 @@ platform :ios do
 
     # upload to HockeyApp
     hockey(
-      api_token: IOS_TOKEN
+      api_token: HOCKEY_IOS_TOKEN
     )
   end
 end
