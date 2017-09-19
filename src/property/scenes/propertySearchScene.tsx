@@ -47,7 +47,6 @@ export default class SearchPage extends Component<Props, State> {
     navigator.geolocation.getCurrentPosition(
       location => {
         let search = `${location.coords.latitude},${location.coords.longitude}`;
-        // this.setState({request: search});
         this.executeQuery({centre_point: search});
       },
       error => {
@@ -64,7 +63,6 @@ export default class SearchPage extends Component<Props, State> {
   componentWillReceiveProps(nextProps) {
     this.setState({
       message: nextProps.errorMessage,
-      // request: nextProps.request,
       placeName: nextProps.request.place_name,
       isLoading: nextProps.isLoading
     })

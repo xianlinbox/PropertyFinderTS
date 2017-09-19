@@ -3,7 +3,7 @@ import {Scene} from 'react-native-router-flux';
 import Search from './scenes/propertySearchScene';
 
 const navigationBarStyle = {
-  backgroundColor: 'blue'
+  backgroundColor: '#48BBEC'
 }
 
 export default () => {
