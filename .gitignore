@@ -53,3 +53,4 @@ buck-out/
 /PropertyFinderTS.ipa
 /PropertyFinderTS.app.dSYM.zip
 /fastlane/.env.default
+gen/

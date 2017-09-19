@@ -9,7 +9,6 @@ const navigationBarStyle = {
 export default () => {
   return (
     <Scene key='Car'
-           initial={true}
            title='Car'
            navigationBarStyle={navigationBarStyle}
            titleStyle={{color: 'white'}}>
