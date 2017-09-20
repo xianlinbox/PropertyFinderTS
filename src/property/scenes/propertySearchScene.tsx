@@ -8,11 +8,25 @@ import {
   Image
 } from 'react-native';
 import {StyleSheet} from 'react-native';
+import {connect} from 'react-redux';
+import {SearchRequest} from '../models/models';
+import {Store} from '../../app/store';
 
-interface SearchRequest {
-  place_name?: string
-  centre_point?: string
+
+function mapStateToProps(state: Store.All) {
+  const {property} = state;
+  const {request} = property;
+  return {
+    request
+  };
 }
+
+function mapDispatchToProps(dispatch) {
+  return {
+    search: (request) => dispatch(request)
+  };
+}
+
 
 interface Props {
   request: SearchRequest
@@ -28,7 +42,7 @@ interface State {
   search: (request: string) => void
 }
 
-export default class SearchPage extends Component<Props, State> {
+export class SearchPage extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
@@ -164,3 +178,8 @@ let styles = StyleSheet.create({
     height: 138
   }
 });
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchPage);
