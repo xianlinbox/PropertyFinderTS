@@ -2,9 +2,13 @@ import {createStore, combineReducers, Store as ReduxStore} from 'redux';
 import { Store } from './store'
 
 function initReducers() {
-  const propertyReducer = require('../property/reducers/propertyReducers').default;
+  const propertyReducer = require('../property/reducers/propertyReducers');
+  const loadingReducer = require('../shared/reducers/loadingReducers');
+  const errorReducer = require('../shared/reducers/errorReducers');
 
   return combineReducers({
+    errorMessage: errorReducer,
+    isLoading: loadingReducer,
     property: propertyReducer
   });
 }

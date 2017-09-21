@@ -1,7 +1,3 @@
-export type Action = {
-  type: string,
-  payload?: object
-}
 
 export const SEARCH = 'SEARCH';
 export const UPDATE_SEARCH_STRING = 'UPDATE_SEARCH_STRING';

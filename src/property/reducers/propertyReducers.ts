@@ -1,4 +1,4 @@
-import { Action } from '../actions/propertyActionTypes'
+import { Action } from '../../shared/actions/sharedActions'
 import { UPDATE_SEARCH_STRING } from '../actions/propertyActionTypes';
 import { Store } from '../../app/store'
 
