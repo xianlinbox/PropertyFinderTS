@@ -1,6 +1,6 @@
 import { Action } from '../../shared/actions/sharedActions'
-import { UPDATE_SEARCH_STRING } from '../actions/propertyActionTypes';
 import { Store } from '../../app/store'
+import { UPDATE_SEARCH_STRING } from '../actions/propertyActions';
 
 const initialState: Store.PropertyState = {
   request: { place_name: 'London'}
