@@ -1,4 +1,5 @@
 import { Action } from '../actions/propertyActionTypes'
+import { UPDATE_SEARCH_STRING } from '../actions/propertyActionTypes';
 import { Store } from '../../app/store'
 
 const initialState: Store.PropertyState = {
@@ -6,9 +7,14 @@ const initialState: Store.PropertyState = {
 };
 
 export default (state = initialState, action: Action) => {
+  console.log(action);
   switch (action.type) {
+    case UPDATE_SEARCH_STRING:
+      return {
+        ...state,
+        request: action.payload
+      };
     default:
-      console.log(state);
       return state;
   }
 };

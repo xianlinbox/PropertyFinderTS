@@ -11,6 +11,7 @@ import {StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 import {SearchRequest} from '../models/models';
 import {Store} from '../../app/store';
+import {updateSearchString} from  '../actions/propertyActions'
 
 
 function mapStateToProps(state: Store.All) {
@@ -23,7 +24,7 @@ function mapStateToProps(state: Store.All) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    search: (request) => dispatch(request)
+    search: (request) => dispatch(updateSearchString(request))
   };
 }
 
@@ -46,7 +47,7 @@ export class SearchPage extends Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
-      placeName: props.request ? props.request.place_name : 'XX',
+      placeName: props.request ? props.request.place_name : '',
       isLoading: props.isLoading,
       message: props.errorMessage || '',
       search: props.search
