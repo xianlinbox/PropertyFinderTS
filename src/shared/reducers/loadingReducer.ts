@@ -1,7 +1,7 @@
 import {
   Action,
   START_LAODING,
-  END_LOADING,
+  END_LOADING
 } from '../actions/sharedActions';
 
 export default (state = false, action: Action) => {

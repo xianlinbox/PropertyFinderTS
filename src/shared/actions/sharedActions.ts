@@ -1,6 +1,6 @@
 export type Action = {
   type: string,
-  payload?: object
+  payload?: any
 }
 
 export const START_LAODING = 'START_LAODING';

@@ -1,37 +1,49 @@
 {
-	"name": "PropertyFinderTS",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"start": "react-native start --transformer node_modules/react-native-typescript-transformer/index.js --sourceExts ts,tsx",
-		"ios": "react-native run-ios",
-		"android": "react-native run-android",
-		"test": "jest",
-		"tsc": "tsc"
-	},
-	"dependencies": {
-		"react": "16.0.0-alpha.12",
-		"react-native": "0.48.2",
-		"react-native-router-flux": "^4.0.0-beta.21",
-		"react-redux": "^5.0.6",
-		"redux": "^3.7.2",
-		"redux-actions": "^2.2.1"
-	},
-	"devDependencies": {
-		"@types/jest": "^20.0.8",
-		"@types/react": "^16.0.5",
-		"@types/react-native": "^0.48.1",
-		"babel-jest": "21.0.2",
-		"babel-preset-react-native": "3.0.2",
-		"concurrently": "^3.5.0",
-		"jest": "21.0.2",
-		"react-native-typescript-transformer": "^1.1.4",
-		"react-test-renderer": "16.0.0-alpha.12",
-		"rimraf": "^2.6.1",
-		"tslint": "^5.7.0",
-		"typescript": "^2.5.2"
-	},
-	"jest": {
-		"preset": "react-native"
-	}
+  "name": "PropertyFinderTS",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start --transformer node_modules/react-native-typescript-transformer/index.js --sourceExts ts,tsx",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
+    "test": "jest",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' ",
+    "tsc": "tsc"
+  },
+  "dependencies": {
+    "react": "16.0.0-alpha.12",
+    "react-native": "0.48.2",
+    "react-native-router-flux": "^4.0.0-beta.21",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^20.0.8",
+    "@types/react": "^16.0.5",
+    "@types/react-native": "^0.48.1",
+    "babel-jest": "21.0.2",
+    "babel-preset-react-native": "3.0.2",
+    "concurrently": "^3.5.0",
+    "jest": "21.0.2",
+    "react-native-typescript-transformer": "^1.1.4",
+    "react-test-renderer": "16.0.0-alpha.12",
+    "rimraf": "^2.6.1",
+    "ts-jest": "^21.0.1",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$"
+  }
 }

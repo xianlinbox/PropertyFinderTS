@@ -3,8 +3,8 @@ import { Store } from './store'
 
 function initReducers() {
   const propertyReducer = require('../property/reducers/propertyReducers');
-  const loadingReducer = require('../shared/reducers/loadingReducers');
-  const errorReducer = require('../shared/reducers/errorReducers');
+  const loadingReducer = require('../shared/reducers/loadingReducer');
+  const errorReducer = require('../shared/reducers/errorReducer');
 
   return combineReducers({
     errorMessage: errorReducer,
