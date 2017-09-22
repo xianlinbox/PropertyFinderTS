@@ -54,3 +54,4 @@ buck-out/
 /PropertyFinderTS.app.dSYM.zip
 /fastlane/.env.default
 gen/
+coverage/
