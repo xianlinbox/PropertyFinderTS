@@ -1,4 +1,4 @@
-import {shallow} from 'enzyme';
+import {shallow} from '../../../../test/enzymeWrapper';
 import {SearchPage} from '../propertySearchScene';
 import * as React from 'react';
 
